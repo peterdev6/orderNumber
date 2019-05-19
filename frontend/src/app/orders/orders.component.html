@@ -1,0 +1,6 @@
+<ul *ngIf="currentItems.length !== 0">
+  <li *ngFor="let item of currentItems">{{item.name}}</li>
+  <button [disabled]="currentPage === 1" (click)="setPage(currentPage - 1)">Previous</button>
+  <button [disabled]="currentPage === pages" (click)="setPage(currentPage + 1)">Next</button>
+</ul>
+<p *ngIf="currentItems.length === 0"> No Data!</p>

@@ -1,0 +1,12 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Customer orders Search
+  </h1>
+  <input type="text" placeholder="Please enter customer id" (keyup)="onChange($event)">
+  <button (click)="onSearch(customerId)">Search</button>
+  <p *ngIf="errorMessage.length !== 0">{{errorMessage}}</p>
+  <router-outlet name="table"></router-outlet>
+</div>
+
+

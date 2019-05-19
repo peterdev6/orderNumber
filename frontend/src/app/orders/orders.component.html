@@ -3,4 +3,5 @@
   <button [disabled]="currentPage === 1" (click)="setPage(currentPage - 1)">Previous</button>
   <button [disabled]="currentPage === pages" (click)="setPage(currentPage + 1)">Next</button>
 </ul>
-<p *ngIf="currentItems.length === 0"> No Data!</p>
+<p *ngIf="currentItems.length === 0 && error === null"> No Data!</p>
+<p *ngIf="error !== null">{{error.message}}</p>

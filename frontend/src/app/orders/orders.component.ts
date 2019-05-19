@@ -13,7 +13,8 @@ export class OrdersComponent {
   allItems = [];
   pages: number;
   currentPage: number;
-  currentItems: any[];
+  currentItems = [];
+  error = null;
   constructor(
     private ordersService: OrdersService,
     private activatedRoute: ActivatedRoute,
@@ -39,6 +40,8 @@ export class OrdersComponent {
         this.allItems = [];
       }
       this.setPage(1);
+    }, error => {
+      this.error = {message: 'Unexpected Error occurred!'};
     });
   }
 
